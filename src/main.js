@@ -4,4 +4,7 @@ import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import './assets/main.css'
 
-createApp(App).use(ElementPlus).mount('#app')
+const app = createApp(App)
+app.config.globalProperties.apiKey = 'NcN9JRPbjXaf2ywN-7_sAwlKpxOBO5hKauFC6FqAEkU'
+
+app.use(ElementPlus).mount('#app')
