@@ -1,0 +1,1155 @@
+/* Vue <transition> 漸變與動畫 */
+.v-enter-active, .v-leave-active {
+  transition: opacity .25s;
+}
+
+.v-enter, .v-leave-to {
+  opacity: 0;
+}
+
+.v-enter-to, .v-leave {
+  opacity: 1;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+
+/* 隱藏type=number輸入框小箭頭 */
+/* Chrome, Safari, Edge, Opera */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* ui 切換通知 */
+.remoCloud-notice-popupWindow{
+  width: 40%;
+  position: relative;
+  overflow: hidden;
+}
+
+.remoCloud-notice-header img{
+  width: 100px;
+  padding: 10px 20px;
+}
+
+.remoCloud-notice-content{
+  background: linear-gradient(278.41deg, #00437E 0%, #2B9BFF 100%);
+  padding: 20px 25px;
+  color: #FFFFFF;
+}
+.remoCloud-notice-content h3{
+}
+.remoCloud-notice-content p{
+  margin-top: 15px;
+}
+
+.remoCloud-notice-buttons{
+  padding-top: 20px;
+  text-align: end;
+}
+
+.remoCloud-notice-buttons button{
+  padding: 6px 20px;
+  margin-left: 5px;
+  border: 1px solid #fff;
+  background: none;
+  color: #FFFFFF;
+  border-radius: 15px;
+  cursor: pointer;
+}
+/*  */
+
+/* 預設的block */
+.remoCloud-treeBlock {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  float: right;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+
+/* 重複使用的popup */
+
+.remoCloud-popupWindow-background {
+  background: #00000033;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 81px;
+  /* z-index: 1000; */
+  z-index: 930;
+}
+
+.remoCloud-popupWindow-full-background {
+  background: #00000033;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.remoCloud-popupWindow-background h5 {
+  color: #0F6C97;
+  font-size: 26px;
+}
+
+.remoCloud-popupWindow {
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin: auto;
+  position: relative;
+  display: block;
+  /* top: 11%; */
+  bottom: 0;
+  right: 0;
+  left: 0;
+  min-height: 10vh;
+  min-width: 300px;
+}
+
+/* popup default input */
+.remoCloud-input-popupWindow{
+  padding: 70px 70px 30px;
+  box-sizing: border-box;
+  width: 35%;
+  text-align: center;
+  min-width: 500px;
+}
+
+.remoCloud-input-popupWindow input {
+  width: 100%;
+  margin: 30px 0;
+}
+
+/* popup error的視窗 */
+.remoCloud-popupWindow-background {
+  background: #00000033;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 950;
+}
+
+.remoCloud-error-popupWindow {
+  position: relative;
+  min-width: 20%;
+  background: #fff;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px;
+  padding: 20px 55px;
+  box-sizing: border-box;
+}
+
+.remoCloud-error-popupWindow img {
+  margin: auto;
+  display: block;
+  padding: 0 30px 10px;
+}
+
+.remoCloud-error-popupWindow h4 {
+  margin-bottom: 20px;
+  color: #505c70;
+  font-size: 38px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.error-listTitle {
+  color: #F67373;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.error-list-message-container {
+  max-height: 200px;
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.error-list-message-container::-webkit-scrollbar {
+  width: .5em;
+}
+
+.error-list-message-container::-webkit-scrollbar-thumb {
+  background-color: rgb(197, 197, 197);
+}
+
+.error-list-message p {
+  font-size: 16px;
+}
+
+
+.error-list-message {
+  margin-top: 18px;
+}
+
+.popupWindow-ok {
+  background-color: #50AEDA;
+  color: white;
+  border: none;
+  text-align: center;
+  margin: auto;
+  display: block;
+  padding: 8px 28px;
+  border-radius: 10px;
+  margin-top: 30px;
+  cursor: pointer;
+  transition: all 0.1s;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.popupWindow-ok:hover {
+  background-color: #0F6C97;
+}
+
+/* popup Success的視窗 */
+.remoCloud-success-popupWindow {
+  position: relative;
+  min-width: 20%;
+  background: #fff;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px;
+  padding: 20px 55px;
+  box-sizing: border-box;
+}
+
+.remoCloud-success-popupWindow img {
+  margin: auto;
+  display: block;
+  padding: 0 30px 10px;
+}
+
+.remoCloud-success-popupWindow h4 {
+  margin-bottom: 20px;
+  color: #505c70;
+  font-size: 38px;
+  font-weight: 800;
+  text-align: center;
+}
+
+/* popup warn 視窗  for profile info*/
+.remoCloud-msg-window {
+  z-index: 965!important;
+}
+
+/*  */
+.remoCloud-popupWindow-background-success .remoCloud-popupWindow {
+  padding: 50px 50px 30px;
+  box-sizing: border-box;
+  width: 17.5%;
+  min-width: 300px;
+  text-align: center;
+  top: 30%;
+}
+
+
+.remoCloud-popupWindow-background-success .remoCloud-popupWindow h5 {
+  color: #0F6C97;
+  font-size: 26px;
+}
+
+.remoCloud-popupWindow-background-success .remoCloud-popupWindow p {
+  margin-top: 20px;
+}
+
+/* search by */
+.remoCloud-searchBy {
+  position: absolute;
+  /* right: 35%; */
+  width: 25%;
+  min-width: 120px;
+  height: 38px;
+  font-size: 14px;
+  color: #aaa;
+  list-style: none;
+  cursor: pointer;
+  background-color: rgba(80, 174, 218, 0.1);
+  border: 1px solid rgba(80, 174, 218, 0.1);
+  border-width: 1px 1px 1px 0;
+  border-radius: 0 5px 5px 0;
+}
+
+.remoCloud-searchBy::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  left: 0;
+  width: 1px;
+  height: 25px;
+  background-color: #aaa;
+  content: '';
+  }
+
+.search-dropdown-button {
+  height: inherit;
+  padding: 7.5px 30px 7.5px 16px;
+  text-overflow: ellipsis;
+  overflow:hidden;
+  white-space: nowrap; 
+}
+
+.search-dropdown-button:after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 20px;
+  margin: auto;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid #aaa;
+  border-bottom: 2px solid #aaa;
+  content: '';
+  }
+
+.search-dropdown-button:hover:after {
+  border-right: 2px solid #50AEDA;
+  border-bottom: 2px solid #50AEDA;
+}
+
+.search-dropdown {
+  position: relative;
+  top: 5px;
+  min-width: 120px;
+  max-height: 200px;
+  /* background-color: #edf7fb; */
+  background-color: #fff;
+  overflow-y: auto;
+  list-style: none;
+  border: 1px solid rgba(80, 174, 218, 0.1);
+  border-radius: 5px;
+  box-shadow: 4px 3px 11px 2px #d2c7c729;
+  padding: 5px;
+}
+
+.search-dropdown::-webkit-scrollbar {
+  width: .4em;
+}
+  
+.search-dropdown::-webkit-scrollbar-thumb {
+  background-color: rgb(214, 214, 214);
+  border-radius: 50px;
+}
+
+.search-dropdown li {
+  height: 38px;
+  padding: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.search-dropdown li:hover {
+  /* background-color: #e1f3fa; */
+  background-color: #EBEBEB;
+  border-radius: 15px;
+}
+
+/* 表格換頁 table pageable */
+.remoCloud-changePage-buttons{
+  position: fixed;
+  background-color: white;
+  width: 80%;
+  bottom: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.remoCloud-changePage-area {
+  font-size: 16px;
+  text-align: center;
+}
+
+.remoCloud-changePage-area img {
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+
+/* david's select option 給非input的下拉選單*/
+.remoCloud-select-btn {
+  /* display: inline-block; */
+  position: relative;
+  display: flex;
+  height: 38px;
+  background: rgb(80 174 218 / 10%);
+  padding: 8px 11px;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 5px;
+  align-items: center;
+  cursor: pointer;
+  justify-content: space-between;
+  border: 1px solid rgb(80 174 218 / 10%);
+  /* margin-bottom: 10px; */
+}
+
+.remoCloud-input-arrow {
+  transition: transform .5s;
+  /* position: relative;
+  right: 25px; */
+  position: absolute;
+  left: 90%;
+  top: 40%;
+}
+
+.remoCloud-select-arrow {
+  transition: transform .5s;
+}
+
+.up {
+  transform: rotate(-180deg);
+}
+
+.down {
+  transform: rotate(0deg);
+}
+
+/* 無效按鈕 */
+.notAllowedBtn {
+  color: #535050!important;
+  background-color: #dfdfdf!important;
+  cursor: not-allowed;
+}
+
+/* 重複使用的input */
+.remoCloud-input {
+  font-size: 16px;
+  width: 18px;
+  height: 38px;
+  vertical-align: middle;
+  margin-bottom: 3px;
+  border: 1px solid rgba(80, 174, 218, 0.1);
+  border-radius: 5px;
+  padding: 8px 11px;
+  background-color: rgba(80, 174, 218, 0.1);
+}
+
+/* search Icon input */
+.remoCloud-toolBar-search {
+  position: relative;
+  display: inline-block;
+}
+
+
+.remoCloud-toolBar-buttons {
+  display: inline-block;
+  float: right;
+  position: relative;
+}
+
+
+.remoCloud-toolBar-search .remoCloud-search-icon {
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  vertical-align: middle;
+
+}
+
+.remoCloud-more-button {
+  display: inline-block;
+  padding: 0px 5px;
+  cursor: pointer;
+}
+
+.remoCloud-more-button {
+  vertical-align: middle;
+}
+
+
+.remoCloud-toolBar-search .remoCloud-input {
+  padding-left: 45px;
+}
+
+/* 可重複使用的 hint */
+.remoCloud-hint {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #E4E8F0;
+  box-shadow: 4px 3px 11px 2px rgb(210 199 199 / 16%);
+  z-index: 500;
+  width: 42.5vw;
+}
+
+.remoCloud-hint .hint-lists h5 {
+  color: #0F6C97;
+  font-size: 20px;
+  margin-top: 8px;
+}
+
+.remoCloud-hint .hint-lists p {
+  color: #535050;
+  font-size: 18px;
+  margin-top: 8px;
+
+}
+
+/* 可重複使用的button類型 */
+.remoCloud-button-cancel {
+  min-width: 85px;
+  padding: 10px 16px;
+  background: #BFBFBF;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.remoCloud-button-search {
+  min-width: 85px;
+  padding: 8px 15px;
+  margin: 0 5px;
+  background: #E2F3FF;
+  color: #535050;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.remoCloud-button {
+  padding: 8px 16px;
+  background: #E2F3FF;
+  color: #535050;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  vertical-align: middle;
+  font-weight: bold;
+}
+
+.remoCloud-button:hover,.remoCloud-button-search:hover {
+  background: #0F6C97;
+  color: white;
+}
+
+.groupManage-button-line {
+  width: 1px;
+  height: 30px;
+  background-color: #A4A4A4;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.remoCloud-button-back {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+}
+
+.remoCloud-button img {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+}
+
+.remoCloud-button span {
+  vertical-align: middle;
+}
+
+
+
+/* 可重複使用的右鍵選單 */
+.remoCloud-listMenu-content {
+  position: absolute;
+  background-color: #ffffff;
+  padding: 5px;
+  box-shadow: 4px 3px 11px 2px #d2c7c729;
+  border-radius: 8px;
+  border: 1px solid #E4E8F0;
+}
+
+.remoCloud-listMenu-content li {
+  list-style: none;
+  padding: 5px 10px;
+  min-width: 125px;
+  cursor: pointer;
+}
+
+.remoCloud-listMenu-content li:hover {
+  background-color: #EBEBEB;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+/* refresh btn */
+.remoCloud-refresh-button {
+  height: 39px;
+  padding: 9px;
+  border-radius: 10px;
+  margin-left: 9px;
+  border: 1px solid #4E4E4E;
+  color: #4E4E4E;
+  background: none;
+  cursor: pointer;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 無效按鈕 */
+.disabled-button {
+  cursor: not-allowed!important;
+  background-color: #dfdfdf;
+  border: none;
+}
+
+
+/* 執行、修改使用 */
+.remoCloud-button-implement {
+  min-width: 85px;
+  padding: 10px 16px;
+  background: #50AEDA;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.remoCloud-button-implement:hover {
+  background-color: #0F6C97;
+}
+
+
+/* select for edit account page */
+.remoCloud-editAccount-list .remoCloud-combobox-container {
+  display: block;
+}
+
+.remoCloud-editAccount-list .remoCloud-combobox-choose {
+  background: rgb(80 174 218/10%);
+  border: 1px solid rgb(80 174 218/10%);
+  padding: 8px 11px;
+  height: 38px;
+  width: 100%;
+}
+
+.remoCloud-editAccount-list .remoCloud-input-arrow {
+  position: absolute;
+  left: 95%;
+  top: 40%;
+}
+
+.remoCloud-editAccount-list .remoCloud-combobox-option {
+  width: 100%;
+}
+/*  */
+
+/* password input component */
+.remoCloud-input-password {
+  position: relative;
+}
+
+.remoCloud-input-password input:disabled {
+  cursor: not-allowed;
+  background-color: rgba(239, 239, 239, 0.8);
+}
+
+.white input {
+  width: 20%;
+  /* margin-top: 9px; */
+  min-width: 250px;
+  font-size: 16px;
+  height: 40px;
+  vertical-align: middle;
+  /* margin-bottom: 3px; */
+  border: 1px solid #E4E8F0;
+  border-radius: 5px;
+  box-shadow: 0 0 2px #1d1d1d1a;
+  padding: 8px 11px;
+}
+
+.blue input {
+  font-size: 16px;
+  width: 100%;
+  height: 38px;
+  vertical-align: middle;
+  margin-bottom: 3px;
+  border: 1px solid rgba(80, 174, 218, 0.1);
+  border-radius: 5px;
+  padding: 8px 11px;
+  background-color: rgba(80, 174, 218, 0.1);
+}
+
+.white img {
+  position: absolute;
+  top: 0px;
+  left: 87%;
+  width: 20px;
+  height: 24px;
+}
+
+.blue img {
+  position: absolute;
+  top: -4px;
+  left: 92%;
+  width: 24px;
+  height: 24px;
+}
+
+
+/* 可重複使用的下拉選單(combobox) */
+.remoCloud-combobox-container {
+  display: inline-block;
+  position: relative;
+}
+
+.remoCloud-combobox-choose {
+  min-width: 250px;
+  border: 1px solid #E4E8F0;
+  border-radius: 5px;
+  box-shadow: 0 0 2px #1d1d1d1a;
+  padding: 7px 11px;
+  box-sizing: border-box;
+  font-size: 16px;
+  cursor: default;
+  padding-right: 29px;
+}
+
+.remoCloud-combobox-option {
+  position: absolute;
+  background: white;
+  min-width: 250px;
+  border: 1px solid #E4E8F0;
+  border-radius: 5px;
+  box-shadow: 0 0 2px #1d1d1d1a;
+  margin-top: -1px;
+  z-index: 500;
+  font-size: 16px;
+  cursor: default;
+}
+
+.remoCloud-combobox-option ul {
+  max-height: 180px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.remoCloud-combobox-option ul::-webkit-scrollbar {
+  width: .4em;
+}
+  
+.remoCloud-combobox-option ul::-webkit-scrollbar-track {
+  
+}
+  
+.remoCloud-combobox-option ul::-webkit-scrollbar-thumb {
+  background-color: rgb(214, 214, 214);
+  border-radius: 50px;
+}
+
+.remoCloud-combobox-option ul li {
+  padding: 8px 11px;
+  list-style: none;
+  position: relative;
+  text-align: left;
+}
+
+.remoCloud-combobox-option li:hover {
+  background: rgba(80, 174, 218, 0.1);
+}
+
+.remoCloud-combobox-option label {
+  font-size: 16px;
+}
+
+/* 可重複使用的線 */
+.remoCloudLine {
+  width: 1px;
+  height: 100%;
+  background-color: #A4A4A4;
+  display: inline-block;
+}
+
+/* 可重複使用的grid */
+.remoCloud-grid-table {
+  /* margin-top: 15px; */
+  overflow: auto;
+  width: 100%;
+}
+
+.remoCloud-grid-table thead {
+  position: sticky;
+  top: 0;
+  background: #fff;
+}
+
+.remoCloud-grid-tr input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+.remoCloud-grid-line td {
+  padding: 0!important;
+}
+
+.remoCloud-grid-header td {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #535050;
+  padding-bottom: 10px;
+  padding-right: 15px;
+}
+
+/* .remoCloud-grid-tr td {
+  padding: 2px 4px 2px 12px;
+} */
+
+.remoCloud-grid-tr-list td {
+  font-size: 1.5rem;
+  /* color: #000000; */
+  padding: 10px 4px 10px 12px;
+}
+
+
+.remoCloud-grid-header td img {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  transition: transform .5s;
+}
+
+.remoCloud-grid-line td {
+  border-bottom: 1px solid #535050;
+}
+
+.remoCloud-grid-tr td img {}
+
+
+/* 可重複使用的flipSwitch */
+.remoCloud-flipswitch {
+  position: relative;
+  width: 50px;
+}
+
+.remoCloud-flipswitch input[type=checkbox] {
+  display: none;
+}
+
+.remoCloud-flipswitch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid #999999;
+  border-radius: 15px;
+  margin-bottom: 0;
+}
+
+.remoCloud-flipswitch-inner {
+  width: 200%;
+  margin-left: -100%;
+  transition: margin 0.1s ease-in 0s;
+}
+
+.remoCloud-flipswitch-cb:checked+.remoCloud-flipswitch-label .remoCloud-flipswitch-inner {
+  margin-left: 0;
+}
+
+.remoCloud-flipswitch-inner:before,
+.remoCloud-flipswitch-inner:after {
+  float: left;
+  width: 50%;
+  height: 24px;
+  padding: 0;
+  line-height: 23px;
+  font-size: 18px;
+  color: white;
+  font-family: Trebuchet, Arial, sans-serif;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+.remoCloud-flipswitch-inner:before {
+  content: "";
+  padding-left: 12px;
+  background-color: #088dcb;
+  color: #FFFFFF;
+}
+
+.remoCloud-flipswitch-inner:after {
+  content: "";
+  padding-right: 12px;
+  background-color: #EBEBEB;
+  color: #888888;
+  text-align: right;
+}
+
+.remoCloud-flipswitch-switch {
+  width: 20px;
+  height: 20px;
+  background: #FFFFFF;
+  border-radius: 50%;
+  border: 1px solid #999999;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 28px;
+  transition: all 0.1s ease-in 0s;
+  margin: auto;
+}
+
+.remoCloud-flipswitch-cb:checked+.remoCloud-flipswitch-label .remoCloud-flipswitch-switch {
+  right: 2px;
+}
+
+.remoCloud-flipswitch-cb:checked+.remoCloud-flipswitch-label .remoCloud-flipswitch-inner {
+  margin-left: 0;
+}
+
+.remoCloud-flipswitch-cb:checked+.remoCloud-flipswitch-label .remoCloud-flipswitch-switch {
+  right: 2px;
+}
+
+.remoCloud-userBar-icon img {
+  cursor: pointer;
+}
+
+
+/* 下拉選單 */
+
+.remoCloud-contextMenu {
+  position: absolute;
+  background-color: #ffffff;
+  padding: 10px 15px;
+  border-radius: 10px;
+  box-shadow: 4px 3px 11px 2px rgb(210 199 199 / 16%);
+  min-width: 250px;
+  top: 85%;
+  right: 1%;
+}
+
+.remoCloud-contextMenu p {
+  width: 100%;
+  padding: 5px 10px;
+  color: #0f6c97;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.remoCloud-contextMenu li {
+  list-style: none;
+  width: 100%;
+  padding: 5px 10px;
+  font-size: 18px;
+  box-sizing: border-box;
+  color: #535050;
+}
+
+.remoCloud-contextMenu li:hover {
+  background: #ebebeb;
+  border-radius: 20px;
+}
+
+
+/* alert */
+.remoCloud-contextMenu-alert {
+  right: 10%;
+}
+
+.remoCloud-contextMenu-alert h5 {
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.remoCloud-contextMenu-tabs ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.remoCloud-contextMenu-tabs li {
+  display: inline-block;
+  color: #4E4E4E;
+  width: auto;
+}
+
+.remoCloud-contextMenu .remoCloud-contextMenu-tabs li {
+  width: auto;
+}
+
+.remoCloud-contextMenu-tabs li.active {
+  color: #4AA0FF;
+  border-bottom: 1px solid #4AA0FF;
+}
+
+.remoCloud-contextMenu-tabs ul li:hover {
+  border-radius: 0;
+}
+
+.remoCloud-contextMenu-alert {
+  max-width: 400px;
+  width: 25%;
+  min-width: 300px;
+}
+
+.remoCloud-contextMenu-content {
+  max-height: 75vh;
+  overflow: auto;
+}
+
+.remoCloud-contextMenu-content li{
+  padding: 10px;
+}
+
+.remoCloud-contextMenu-alert li .remoCloud-contextMenu-description {
+  color: #000000;
+  font-size: 16px;
+  padding: 3px 0;
+  font-weight: normal;
+}
+
+.remoCloud-contextMenu-alert li .remoCloud-contextMenu-time {
+  color: #4AA0FF;
+  font-size: 16px;
+  padding: 0;
+}
+
+.remoCloud-contextMenu-content .remoCloud-contextMenu-read p{
+  color: #535050;
+}
+
+
+
+.remoCloud-contextMenu-content h6 {
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.remoCloud-contextMenu .remoCloud-other-messages p {
+  font-size: 22px;
+  color: #128FF9;
+  text-align: center;
+  width: auto;
+  box-sizing: border-box;
+  padding: 10px;
+  cursor: pointer;
+}
+
+
+.remoCloud-contextMenu .remoCloud-other-messages p:hover{
+  background-color: #4aa1ff27;
+}
+
+.gotop-arrow {
+  position: relative;
+}
+.gotop-arrow::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  position: absolute;
+  top: 22px;
+  right: -3.5px;
+  border-left: #ffffff 2px solid;
+  border-bottom: #ffffff 2px solid;
+  transform: rotate(135deg);
+}
+
+/* device (device、group setting) toolbar */
+.remoCloud-device-toolBar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: sticky;
+  top: 81px;
+  min-width: 800px;
+  padding: 20px 0;
+  background-color: #ffffff;
+  z-index: 9;
+}
+
+.remoCloud-device-toolBar > div {
+  min-width: 425px;
+  padding: 5px 0;
+}
+
+/* user defined 欄位 */
+.remoCloud-device-pencil {
+  cursor: pointer;
+  margin-left: 10px;
+  float: right;
+}
+
+.remoCloud-small-icon {
+  width: 16px;
+  cursor: pointer;
+}
+
+/* hint */
+.remoCloud-profileInfo-hint {
+  position: absolute;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #E4E8F0;
+  box-shadow: 4px 3px 11px 2px rgb(210 199 199 / 16%);
+  z-index: 500;
+  width: 25vw;
+}
+
+.top-hint {
+  bottom: 25px;
+}
+
+/* 列印時的設定 */
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  .no-print {
+    display: none;
+  }
+
+  .print-template {
+    display: block;
+    width: 100%;
+  }
+}
