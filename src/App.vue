@@ -2,8 +2,8 @@
   <div>
     <div>
       <div>
-        <button @click="exportMktFileWindow = true" style="margin-right: 15px;">export</button>
-        <button @click="uploadFileWindow = true" style="margin-right: 15px;">upload</button>
+        <button @click="exportMktFileWindow = true">export</button>
+        <button @click="uploadFileWindow = true">upload</button>
         <span v-if="RunLoading" style="margin-right: 15px;">
           上傳中
           <img src="@/assets/loading-gif.gif" style="width: 25px;">
@@ -110,8 +110,8 @@
       <div v-if="uploadFileWindow" class="remoCloud-popupWindow-background remoCloud-popupWindow-background-profileName">
         <div class="remoCloud-popupWindow remoCloud-input-popupWindow">
           <h5>Please input .mkt file name</h5>
-          <div class="remoCloud-popupWindow-profileName">
-            <input type="file" accept=".wkt" @change="onFileChange" style="margin: auto;">
+          <div>
+            <input type="file" accept=".wkt" @change="onFileChange" style="margin: 50px auto;">
           </div>
           <div class="remoCloud-profileName-bottom">
             <button class="remoCloud-button-implement" @click="uploadFileWindow = false">Cancel</button>
