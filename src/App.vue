@@ -175,6 +175,7 @@ export default {
           latlng: [25.02334, 121.54853]
         }
       ],
+      apiKey: 'NcN9JRPbjXaf2ywN-7_sAwlKpxOBO5hKauFC6FqAEkU',
       layerId: 'QQQ',
       geometries: [],
       msgLoading: false,
