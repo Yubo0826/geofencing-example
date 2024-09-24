@@ -175,7 +175,7 @@ export default {
           latlng: [25.02334, 121.54853]
         }
       ],
-      apiKey: import.meta.env.API_KEY,
+      apiKey: import.meta.env.VITE_API_KEY,
       layerId: 'QQQ',
       geometries: [],
       msgLoading: false,
@@ -347,15 +347,22 @@ export default {
       this.renderGeofence()
     },
     getGeometries() {
+      // const config = {
+      //   params: {
+      //     apiKey: this.apiKey,
+      //     in: `point:${this.targetDeviceLatlng[0]}, ${this.targetDeviceLatlng[1]};r=${this.targetDeviceRadius}`,
+      //     layers: this.layerId
+      //   }
+      // }
       const config = {
-        params: {
-          apiKey: this.apiKey,
-          in: `point:${this.targetDeviceLatlng[0]}, ${this.targetDeviceLatlng[1]};r=${this.targetDeviceRadius}`,
-          layers: this.layerId
-        }
+        apiKey: this.apiKey,
+        proximity: `${this.targetDeviceLatlng[0]},${this.targetDeviceLatlng[1]},${this.targetDeviceRadius}`,
+        layer_ids: this.layerId
       }
       this.msgLoading = true
-      axios.get('https://geofencing.hereapi.com/v8/geofence', config)
+      // const url = 'https://fleet.ls.hereapi.com/2/search/proximity.json'
+      // const url = 'https://geofencing.hereapi.com/v8/geofence'
+      axios.get(`https://fleet.ls.hereapi.com/2/search/proximity.json?apiKey=${this.apiKey}&proximity=${this.targetDeviceLatlng[0]},${this.targetDeviceLatlng[1]},${this.targetDeviceRadius}&layer_ids=${this.layerId}`)
         .then(response => {
           this.msgLoading = false
           this.noDetectGeofences = []
