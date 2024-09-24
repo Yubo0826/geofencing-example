@@ -354,11 +354,11 @@ export default {
       //     layers: this.layerId
       //   }
       // }
-      const config = {
-        apiKey: this.apiKey,
-        proximity: `${this.targetDeviceLatlng[0]},${this.targetDeviceLatlng[1]},${this.targetDeviceRadius}`,
-        layer_ids: this.layerId
-      }
+      // const config = {
+      //   apiKey: this.apiKey,
+      //   proximity: `${this.targetDeviceLatlng[0]},${this.targetDeviceLatlng[1]},${this.targetDeviceRadius}`,
+      //   layer_ids: this.layerId
+      // }
       this.msgLoading = true
       // const url = 'https://fleet.ls.hereapi.com/2/search/proximity.json'
       // const url = 'https://geofencing.hereapi.com/v8/geofence'
